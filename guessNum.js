@@ -68,6 +68,7 @@ function guessNumber(){
         document.querySelector('.generateAgain').style.display = "block";
         document.querySelector('.checkGuess').style.display = "none";
         document.querySelector('.navigator').style.display = "none";
+        tries = 1;
     }
 }
 
