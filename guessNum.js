@@ -1,6 +1,9 @@
 let randomNumber;
 let maxNum;
 let minNum;
+let  tries = 0;
+let navigatorMin;
+let navigatorMax;
 
 document.querySelector('.resultContainer').style.visibility = "hidden";
 document.querySelector('.generateAgain').style.display = "none";
@@ -19,10 +22,11 @@ function generateRandomNumber(){
     document.querySelector('.resultContainer').style.visibility = "visible";
     document.querySelector('.result').style.display = "block";
     document.querySelector('.numbers').style.display = "block";
-}
+    document.querySelector('.navigator').style.display = "block";
 
-let navigatorMin = minNum;
-let navigatorMax = maxNum;
+    navigatorMin = minNum;
+    navigatorMax = maxNum;
+}
 
 function guessNumber(){
     const resultP = document.querySelector('.result');
@@ -33,24 +37,35 @@ function guessNumber(){
         resultP.innerHTML = `Your guess ${guessedNum} is TOO LOW! Try Again!`;
         console.log("in while loop if too low");
         resultP.style.color = "red";
-        navigatorMin = guessedNum;
+        if(guessedNum > navigatorMin){
+            navigatorMin = guessedNum;
+        }
         navigator.innerHTML = `You need to guess between ${navigatorMin} - ${navigatorMax}`;
+        tries += 1;
+        document.querySelector('.guessInput').value = '';
+        document.querySelector('.guessInput').focus();
     } 
     
     else if (guessedNum > randomNumber){
         resultP.innerHTML= `Your guess ${guessedNum} is TOO HIGH! Try Again!`;
         console.log("in while loop if too high");
         resultP.style.color = "red";
-        navigatorMax = guessedNum;
+        if(guessedNum < navigatorMax){
+            navigatorMax = guessedNum;
+        }
         navigator.innerHTML = `You need to guess between ${navigatorMin} - ${navigatorMax}`;
+        tries += 1;
+        document.querySelector('.guessInput').value = '';
+        document.querySelector('.guessInput').focus();
     } 
     
     else if(randomNumber === guessedNum){
-        resultP.innerHTML = `You guessed CORRECT! The random number was ${randomNumber}!`;
+        resultP.innerHTML = `You guessed CORRECT in ${tries} attempts! The random number was ${randomNumber}!`;
         resultP.style.color = "green";
         document.querySelector('.guessInput').disabled = true;
         document.querySelector('.generateAgain').style.display = "block";
         document.querySelector('.checkGuess').style.display = "none";
+        document.querySelector('.navigator').style.display = "none";
     }
 }
 
@@ -67,4 +82,6 @@ function arrangeNumberAgain(){
     document.querySelector('.generateAgain').style.display = "none";
     document.querySelector('.checkGuess').style.display = "block";
     document.querySelector('.navigator').style.display = "none";
+    navigatorMin = minNum;
+    navigatorMax = maxNum;
 }
