@@ -22,7 +22,6 @@ function generateRandomNumber(){
     document.querySelector('.resultContainer').style.visibility = "visible";
     document.querySelector('.result').style.display = "block";
     document.querySelector('.numbers').style.display = "block";
-    document.querySelector('.navigator').style.display = "block";
 
     navigatorMin = minNum;
     navigatorMax = maxNum;
@@ -32,6 +31,7 @@ function guessNumber(){
     const resultP = document.querySelector('.result');
     const guessedNum = Number(document.querySelector('.guessInput').value);
     const navigator = document.querySelector('.navigator');
+    navigator.style.display = "block";
 
     if(guessedNum < randomNumber){
         resultP.innerHTML = `Your guess ${guessedNum} is TOO LOW! Try Again!`;
