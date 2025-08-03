@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NumberGuessing.css">
+    <title>Guess The Number</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Number Guessing Game</h1>
+        <div class="numberContainer">
+            <div class="bilmiom">
+                <input type="number" class="minNum" placeholder="Type the Min Number">
+                <input type="number" class="maxNum" placeholder="Type the Max Number">
+                <button class="numberGenerator" onclick="generateRandomNumber()">Generate the Number</button>
+            </div>
+        </div>
+        <p class="numbers"></p>
+        <div class="resultContainer" style="margin-top: 10px;">
+            <input type="number" class="guessInput" placeholder="Guess the Number">
+            <button class="checkGuess" onclick="guessNumber()">Check</button>
+            <button onclick="arrangeNumberAgain()" class="generateAgain">Generate Number Again</button>
+        </div>
+        <p class="result"></p>
+        <p class="navigator"></p>
+    </div>
+    <script src="NumberGuessing.js"></script>
+</body>
+</html>
