@@ -1,0 +1,67 @@
+body {
+    background-color: #ffbac9;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.header{
+    padding-top: 10vh;
+    color: #333333;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+.numberContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bilmiom{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+}
+
+input{
+    height: 30px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+button{
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.resultContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers{
+    font-size: 25px;
+}
+
+.result{
+    font-size: 25px;
+}
