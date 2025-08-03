@@ -1,16 +1,18 @@
 let randomNumber;
 let maxNum;
 let minNum;
-let  tries = 0;
+let  tries = 1;
 let navigatorMin;
 let navigatorMax;
 
 document.querySelector('.resultContainer').style.visibility = "hidden";
 document.querySelector('.generateAgain').style.display = "none";
+const alert = document.querySelector('.alert').style.display = "none";
 
 function generateRandomNumber(){
     minNum = document.querySelector('.minNum').value;
     maxNum = document.querySelector('.maxNum').value;
+
     randomNumber = Math.floor(Math.random() * maxNum + minNum);
 
     console.log(minNum, maxNum, randomNumber);
@@ -60,7 +62,7 @@ function guessNumber(){
     } 
     
     else if(randomNumber === guessedNum){
-        resultP.innerHTML = `You guessed CORRECT in ${tries} attempts! The random number was ${randomNumber}!`;
+        resultP.innerHTML = `You guessed the number CORRECT in ${tries} attempts! The random number was ${randomNumber}!`;
         resultP.style.color = "green";
         document.querySelector('.guessInput').disabled = true;
         document.querySelector('.generateAgain').style.display = "block";
